@@ -1,0 +1,69 @@
+.divide-line {
+  background: #F2F2F2;
+  border: 1px solid #E8E8E8;
+  height: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.chart-dom {
+  height: 400px;
+}
+.trigger-container {
+  padding: 0;
+  background: rgba(0,0,0,0.02);
+  box-shadow: 4px 4px 2px #ddd;
+  width:400px;
+  .trigger-header {
+    padding: 8px 16px 8px 16px;
+    border-bottom: 1px solid #ddd;
+    .app-title {
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.85);
+      margin-right: 80px;
+      margin-left:12px;
+      text-align: center;
+      width:34%;
+      display: inline-block;
+    }
+    .flow-title {
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.85);
+      text-align: center;
+      width:32%;
+      display: inline-block;
+    }
+  }
+  .content {
+    padding: 8px 16px 8px 16px;
+    .trigger-item {
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      line-height: 22px;
+      list-style-type: circle;
+      color: #0099ff;
+      .flow-item {
+        font-family: PingFangSC-Regular;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.65);
+        line-height: 22px;
+        text-align: center;
+        display: inline-block;
+        width:30%
+      }
+      .app-item {
+        font-family: PingFangSC-Regular;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.65);
+        line-height: 22px;
+        margin-right: 90px;
+        text-align: center;
+        display: inline-block;
+        width:30%
+      }
+    }
+  }
+
+}

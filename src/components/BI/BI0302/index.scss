@@ -1,0 +1,44 @@
+.device-info-header{
+  font-family: PingFangTC-Medium;
+  font-size: 16px;
+  color: #333333;
+  line-height: 18px;
+  margin-bottom: 16px;
+}
+
+.device-info-container{
+  padding: 16px 80px 16px 80px;
+  background: rgba(0,0,0,0.02);
+  margin-bottom: 16px;
+  .device-info-row{
+    margin-bottom: 24px;
+    .device-info-col{
+      .label{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: rgba(0,0,0,0.45);
+      }
+      .value{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: rgba(0,0,0,0.65);
+        line-height: 22px;
+        margin-left:8px;
+      }
+    }
+  }
+}
+
+.radio-btn{
+  margin-right: 180px;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: rgba(0,0,0,0.65);
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.LTE-info-container{
+  background: rgba(0,0,0,0.02);
+  padding: 16px 40px 16px 40px;
+}
