@@ -42,7 +42,7 @@ class CI2704 extends React.Component {
         });
     }
     edit = (record) => {
-        if (record.encryption === "none") {
+        if (record.encryption === "None") {
             this.setState({
                 disabled: true,
             })
@@ -232,7 +232,7 @@ class CI2704 extends React.Component {
                     {key: "2", value: "WPA-PSK", name: "WPA-PSK"},
                     {key: "3", value: "WPA-PSK/WPA2-PSK", name: "WPA-PSK/WPA2-PSK"},],
                 onChange: (value, vm) => {
-                    if (value === "none") {
+                    if (value === "None") {
                         this.setState({
                             disabled: true
                         }, vm.props.form.setFieldsValue({

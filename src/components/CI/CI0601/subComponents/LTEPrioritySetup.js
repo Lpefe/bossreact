@@ -37,7 +37,11 @@ class LTEPrioritySetup extends React.Component {
                     type:"ci0601Info/update_lte_allowed",
                     payload:{
                         company_id:sessionStorage.getItem("companyId"),
-                        allowed:values.allowed.join(',')
+                        allowed:values.allowed.join(','),
+                        record:{
+                            company_id:sessionStorage.getItem("companyId"),
+                            allowed:this.props.ci0601Info.lteAllowedData
+                        }
                     }
                 })
             }
@@ -70,10 +74,10 @@ class LTEPrioritySetup extends React.Component {
                      })(
                          <Checkbox.Group style={{ width:300,marginTop:10 }}>
                              <Row>
-                                 <Col span={6}><Checkbox disabled={!this.state.isEdit} value="1">紧急</Checkbox></Col>
-                                 <Col span={6}><Checkbox disabled={!this.state.isEdit} value="2">高</Checkbox></Col>
-                                 <Col span={6}><Checkbox disabled={!this.state.isEdit} value="3">中</Checkbox></Col>
-                                 <Col span={6}><Checkbox disabled={!this.state.isEdit} value="4">低</Checkbox></Col>
+                                 <Col span={6}><Checkbox disabled={!this.state.isEdit} value="1">{__(messages["紧急"])}</Checkbox></Col>
+                                 <Col span={6}><Checkbox disabled={!this.state.isEdit} value="2">{__(messages["高"])}</Checkbox></Col>
+                                 <Col span={6}><Checkbox disabled={!this.state.isEdit} value="3">{__(messages["中"])}</Checkbox></Col>
+                                 <Col span={6}><Checkbox disabled={!this.state.isEdit} value="4">{__(messages["低"])}</Checkbox></Col>
                              </Row>
                          </Checkbox.Group>
                      )}

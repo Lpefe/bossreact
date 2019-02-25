@@ -86,14 +86,14 @@ module.exports = function (proxy, allowedHost) {
                 target: "http://192.168.34.41:9898",
                 changeOrigin: true,
             },
-           /*'/v1/':{
+           '/v1/':{
                 target:"http://47.100.246.45:8082",
                 changeOrigin: true,
-            }//测试环境New*/
-             '/v1/':{
+            }//测试环境New
+            /* '/v1/':{
                target:"http://192.168.29.89:8001",
                changeOrigin: true,
-           }//beta环境,
+           }//beta环境,*/
            /* '/v1/':{
                 target:"http://127.0.0.1:7001",
                 changeOrigin: true,

@@ -107,7 +107,7 @@ class BI1903 extends React.Component {
         this.props.dispatch({
             type: "bi1903Info/update_ssid_template_agency",
             payload: {
-                id: {ids: [record.id]},
+                id: {ids: [record.id],record:record},
                 company_id: this.state.selectCompanyId,
                 name: this.state.searchName,
             }
@@ -142,6 +142,7 @@ class BI1903 extends React.Component {
             payload: {
                 payload: {
                     ids: this.state.selectedIds,
+                    records:this.state.selectedRecords
                 },
                 company_id: this.state.selectCompanyId,
                 name: this.state.searchName,
@@ -152,7 +153,7 @@ class BI1903 extends React.Component {
         this.props.dispatch({
             type: "bi1903Info/update_ssid_template_agency",
             payload: {
-                id: {ids: this.state.selectedIds, records: [this.state.selectedIds]},
+                id: {ids: this.state.selectedIds, records: this.state.selectedRecords},
                 company_id: this.state.selectCompanyId,
                 name: this.state.searchName,
             }
@@ -163,7 +164,7 @@ class BI1903 extends React.Component {
         const __ = commonTranslate(this);
         var option = []
         this.props.bi1903Info.companyList.map((item) => {
-            return option.push(<Option value={item.id} key={item.id}>{item.company}</Option>)
+            return option.push(<Option value={item.id} key={item.id}>{item.company_abbr}</Option>)
         })
 
         const ModalOptions = {
@@ -175,7 +176,11 @@ class BI1903 extends React.Component {
             onCancel: this.closeAddModal,
             hasSubmitCancel: this.state.editId === undefined,
             extraUpdatePayload: {},
-            initPayload: {},
+            initPayload: {
+                id: {ids: this.state.selectedIds, records: this.state.selectedRecords},
+                company_id: this.state.selectCompanyId,
+                name: this.state.searchName,
+            },
             parentVm: this,
             InputItems: [{
                 type: "Select",
@@ -309,6 +314,7 @@ class BI1903 extends React.Component {
         const rowSelection = {
             fixed: true,
             onChange: (selectedRowKeys, selectedRecords) => {
+                console.log(selectedRecords)
                 this.setState({
                     selectedIds: selectedRowKeys,
                     selectedRecords: selectedRecords,
@@ -319,7 +325,7 @@ class BI1903 extends React.Component {
             <Card className="card">
                 <HeaderBar hasSearch={true}
                            hasSelect={true}
-                           selectPlaceHolder={__(messages['请选择状态'])}
+                           selectPlaceHolder={__(messages['请选择企业名称'])}
                            selectOneWidth={220}
                            selectOneMethod={this.handleSelectStatus}
                            options={option}

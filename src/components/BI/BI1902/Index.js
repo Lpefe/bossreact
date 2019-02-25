@@ -121,7 +121,7 @@ class BI1902 extends React.Component {
         const __ = commonTranslate(this);
         var option = []
         this.props.bi1902Info.companyList.map((item) => {
-                return option.push(<Option value={item.id} key={item.id}>{item.company}</Option>)
+                return option.push(<Option value={item.id} key={item.id}>{item.company_abbr}</Option>)
             })
         const ModalOptions = {
             title:this.state.editId ? __(messages["编辑"]) :__(messages["新增"]),
@@ -230,7 +230,7 @@ class BI1902 extends React.Component {
             <Card className="card">
                             <HeaderBar hasSearch={true} 
                             hasSelect={true}
-                            selectPlaceHolder={__(messages['请选择状态'])}
+                            selectPlaceHolder={__(messages['请选择企业名称'])}
                             selectOneWidth={220}
                             selectOneMethod={this.handleSelectStatus}
                             options={option}

@@ -48,12 +48,10 @@ export default {
         },
         *create_ssid_template_agency({payload},{call,put}){
             const backData = yield call(create_ssid_template_agency, payload.update);
+            console.log(payload)
             if (backData.success) {
                 BossMessage(true, "添加成功");
-                yield put({
-                    type:"get_ssid_template",
-                    payload:{}
-                });
+
             } else {
                 BossMessage(false, "添加失败" + backData.result);
             }

@@ -139,8 +139,7 @@ class MI1902C extends React.Component {
         this.setState({
             companyModalShow: false,
             edit:"",
-            editRecord: {
-            },
+            editRecord: {},
             converged:false
         },()=>{
             this.getDocker();

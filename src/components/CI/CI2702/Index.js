@@ -83,7 +83,7 @@ class CI2702 extends React.Component {
         this.props.dispatch({
             type: "ci2702Info/delete_ssid_template",
             payload: {
-                init:{ids: [record.id]},
+                init:{ids: [record.id],records:[record]},
                 name:{name:this.state.selectName}
             }
         })

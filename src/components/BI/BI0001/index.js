@@ -922,7 +922,7 @@ class BI0001 extends React.Component {
             dataIndex: 'type',
             key: 'type',
         }, {
-            title: __(messages['带宽'])+'M',
+            title: __(messages['带宽'])+'(M)',
             dataIndex: 'bandwidth',
             key: 'charge_type',
         }, {

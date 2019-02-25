@@ -221,7 +221,6 @@ export default {
             })
         },
         *set_backup_link({payload},{call,put}){
-            console.log(payload);
             const backData = yield call(set_backup_link, payload.update);
             if(backData.success){
                 BossMessage(true, "修改成功");
@@ -230,7 +229,7 @@ export default {
                     payload: payload.init
                 })
             }else{
-                BossMessage(false, "编辑失败");
+                BossMessage(false, "编辑失败"+backData.result);
             }
         }
 

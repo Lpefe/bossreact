@@ -1,9 +1,7 @@
 import {defineMessages} from 'react-intl';
 
 const messages = defineMessages({
-
-
-
+    "请选择企业名称":{id:"BI1902.请选择企业名称"},
     '编辑':{id:"BI1903.编辑"},
     '新增':{id:"BI1903.新增"},
     '企业名称':{id:"BI1903.企业名称"},

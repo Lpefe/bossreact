@@ -92,7 +92,7 @@ class CI2703 extends React.Component {
         this.props.dispatch({
             type: "ci2703Info/update_ssid_template_agency",
             payload: {
-                records:record,
+                record:record,
                 ids:[record.id],
                 selectName:this.state.selectName,
                 companyId:parseInt(this.state.company_id),
@@ -112,6 +112,7 @@ class CI2703 extends React.Component {
         this.props.dispatch({
             type: "ci2703Info/delete_ssid_template_agency",
             payload: {
+                records:[record],
                 ids: [record.id],
                 selectName:this.state.selectName,
                 companyId:parseInt(this.state.company_id),
@@ -124,6 +125,7 @@ class CI2703 extends React.Component {
             payload: {
                 ids: this.state.selectedIds,
                 selectName:this.state.selectName,
+                records: this.state.selectedRecords,
                 companyId:parseInt(this.state.company_id),
             }
         })
@@ -133,6 +135,7 @@ class CI2703 extends React.Component {
             type: "ci2703Info/update_ssid_template_agency",
             payload: {
                 ids: this.state.selectedIds,
+                records: this.state.selectedRecords,
                 selectName:this.state.selectName,
                 companyId:parseInt(this.state.company_id),
             }

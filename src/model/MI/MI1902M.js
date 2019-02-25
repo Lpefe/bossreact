@@ -23,11 +23,11 @@ export default {
             let company_id = payload.init.company_id
             let bgp_data = payload.update
             let record =  payload.init.record
-            const backData=yield call(update_bgp,{sn:sn,bgp_data:[bgp_data],records:record});
+            const backData=yield call(update_bgp,{sn:sn,bgp_data:[bgp_data],record:record});
             const backData2=yield call(update_bgp_ipset,{
                 company_id:company_id,
                 bgp_ipset_data:bgp_data.iptable.length<7?[]:[{iptable:bgp_data.iptable}],
-                records:record
+                record:record
             });
             if (backData2.success&&backData.success) {
                 BossMessage(true, "修改成功");

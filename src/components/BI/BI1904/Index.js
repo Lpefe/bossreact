@@ -44,7 +44,7 @@ class BI1904 extends React.Component {
         });
     }
     edit = (record)=>{
-        if(record.encryption==="none"){
+        if(record.encryption==="None"){
             this.setState({
                 disabled:true,
             })
@@ -107,7 +107,6 @@ class BI1904 extends React.Component {
     render() {
         const __ = commonTranslate(this);
         var option = []
-        console.log(this.props.bi1904Info.companyList)
         this.props.bi1904Info.companyList.map((item) => {
                 return option.push(<Option value={item.id} key={item.id}>{item.company_abbr}</Option>)
             })
@@ -214,7 +213,6 @@ class BI1904 extends React.Component {
             hasSubmitCancel: this.state.editId === undefined,
             extraUpdatePayload: {
                 ids:[this.state.editRecord.id],
-                records:[this.state.editRecord]
             },
             initPayload: {
                 company_id:this.state.selectStatus,
@@ -250,7 +248,7 @@ class BI1904 extends React.Component {
                     {key: "2", value: "WPA-PSK", name: "WPA-PSK"},
                     {key: "3", value: "WPA-PSK/WPA2-PSK", name: "WPA-PSK/WPA2-PSK"},],
                 onChange: (value, vm) => {
-                    if(value==="none"){
+                    if(value==="None"){
                         this.setState({
                             disabled:true
                         },vm.props.form.setFieldsValue({
@@ -289,7 +287,7 @@ class BI1904 extends React.Component {
             <Card className="card">
  <HeaderBar hasSearch={true} 
                             hasSelect={true}
-                            selectPlaceHolder='请选择企业'
+                            selectPlaceHolder={__(messages['请选择企业名称'])}
                             selectOneWidth={220}
                             selectOneMethod={this.handleSelectStatus}
                             options={option}

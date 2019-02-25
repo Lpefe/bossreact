@@ -488,11 +488,10 @@ async function create_device_model(params) {
 async function update_device_model(params) {
     let formData = new FormData();
     for (let key in params) {
-
         if(key==='file'&&params[key]){
             formData.append(key, params[key][0])
         }else{
-            formData.append(key, params[key]);
+            formData.append(key, params[key]===undefined?"":params[key]);
         }
     }
     return $.formPost("/v1/company/update_device_model/", formData)
